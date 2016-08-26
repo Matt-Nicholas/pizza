@@ -2,14 +2,76 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="css/styles.css" media="screen">
+        <link rel="stylesheet" href="css/bootstrap.min.css" media="screen">
         <link rel="stylesheet" href="css/styles.css" media="screen">
         <script src="js/jquery-3.1.0.js"></script>
         <script src="js/scripts.js"></script>
-        <title>Miis Marple's Pizza Co.</title>
+        <title>Miss Marple's Pizza Co.</title>
     </head>
     <body>
         <h1>Miss Marple's Pizza Co.</h1>
+        <div class="container">
+            <form id="custom-pizza">
 
+                <div class="jumbotron">
+                    <h2>Build your own pizza</h2>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>Choose a size</h3>
+                            <input class="size" type="radio" name="size" value="sm" id="size1"> Small<br>
+                            <input class="size" type="radio" name="size" value="md" id="size1"> Medium<br>
+                            <input class="size" type="radio" name="size" value="lg" id="size1"> Large<br>
+                        </div>
+                        <div class="col-xs-6">
+                            <h3>Choose a style</h3>
+                            <input class="type" type="radio" name="type" value="Thin crust"> Thin crust<br>
+                            <input class="type" type="radio" name="type" value="Hand Tossed"> Hand tossed round<br>
+                            <input class="type" type="radio" name="type" value="Deep-Dish"> Square deep-dish<br>
+
+                        </div>
+                    </div>
+                    <h3>Select your toppings</h3>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Cheese" id="0">Cheese<br>
+                            <input type="checkbox" name="topping" value="Pepperoni" id="1">Pepperoni<br>
+                            <input type="checkbox" name="topping" value="Prosciutto" id="2">Prosciutto<br>
+                            <input type="checkbox" name="topping" value="Artichoke" id="3">Artichoke<br>
+                            <input type="checkbox" name="topping" value="Sun-dried Tomatoe" id="4">Sun-dried tomatoes<br>
+                            <input type="checkbox" name="topping" value="Bannana Peppers" id="5">Bannana peppers<br>
+                            <input type="checkbox" name="topping" value="Salami" id="6">Salami<br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Roasted Bell Peppers" id="7">Roasted bell peppers<br>
+                            <input type="checkbox" name="topping" value="Black Olives" id="8">Black olives<br>
+                            <input type="checkbox" name="topping" value="Spinach" id="9">Spinach<br>
+                            <input type="checkbox" name="topping" value="Tomatoe" id="10">Tomatoe<br>
+                            <input type="checkbox" name="topping" value="Jalapeno" id="11">Jalapeno<br>
+                            <input type="checkbox" name="topping" value="Garlic" id="12">Garlic<br>
+                            <input type="checkbox" name="topping" value="Sausage" id="13">Sausage<br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Mushrooms" id="14">Mushrooms<br>
+                            <input type="checkbox" name="topping" value="Anchovies" id="15">Anchovies<br>
+                            <input type="checkbox" name="topping" value="Onions" id="16">Onions<br>
+                            <input type="checkbox" name="topping" value="Pineapple" id="17">Pineapple<br>
+                            <input type="checkbox" name="topping" value="Green Olives" id="18">Green olives<br>
+                            <input type="checkbox" name="topping" value="Bacon" id="19">Bacon<br>
+                            <input type="checkbox" name="topping" value="Meatball" id="20">Meatball<br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Green Bell Peppers" id="21">Green bell peppers<br>
+                            <input type="checkbox" name="topping" value="Chicken" id="22">Chicken<br>
+                            <input type="checkbox" name="topping" value="Broccoli" id="23">Broccoli<br>
+                            <input type="checkbox" name="topping" value="Ham" id="24">Ham<br>
+                            <input type="checkbox" name="topping" value="Wild Mushrooms" id="25">Wild Mushrooms<br>
+                            <input type="checkbox" name="topping" value="Smoked Oyster" id="26">Smoked-Oysters<br>
+                            <input type="checkbox" name="topping" value="Pickles" id="27">Pickles<br>
+                        </div>
+                    </div>
+                    <br><button type="submit" class="btn btn-danger btn-lg" id="add-pizza">Add <span id="another-pizza">Another </span>Pizza</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
