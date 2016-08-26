@@ -1,5 +1,7 @@
 body{
     text-align: center;
+    font-family: Verdana, Geneva, sans-serif;
+
 }
 
 .row{
@@ -8,4 +10,49 @@ body{
 
 #another-pizza{
     display: none;
+}
+#checkout{
+    display: none;
+}
+.checkout-button{
+    display: none;
+}
+
+h1{
+    font-weight: bold;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+h2{
+    margin-top: 5px;
+
+}
+
+h3{
+    margin-top: 5px;
+
+}
+h5{
+    margin-top: 5px;
+
+}
+#banner{
+    text-align: left;
+    background-color: red;
+    color: white;
+    padding-top: 30px
+}
+.jumbotron{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+small{
+    font-size: smaller;
+    font-style: italic;
+}
+.hot{
+    color: red;
 }

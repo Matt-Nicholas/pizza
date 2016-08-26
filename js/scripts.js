@@ -1,10 +1,10 @@
 var pizzasOrdered = [];
 // New Pizza Constructor
-function PizzaMaker(size, style, selectedToppings, flavoredCrust){
+function PizzaMaker(size, style, selectedToppings){
     this.pSize = size;
     this.pStyle = style;
     this.toppings = selectedToppings;
-    this.flavoredCrust = flavoredCrust;
+    // this.flavoredCrust = flavoredCrust; Coming Soon
 }
 // Topping Cost Calculator
 PizzaMaker.prototype.toppingsCharge = function(j){
@@ -56,13 +56,13 @@ function specialtyPizza(pizza, size, type, flavoredCrust){
     addToppings(pos);
     addPizza();
 }
+// User Logic
 $(document).ready(function(){
     var numOfToppingsAvailable = 28;
     $('#custom-pizza').submit(function(event){
         var selectedToppings = [];
-
         event.preventDefault();
-        // Get Pizza Info
+        // Get Custom Pizza Info
         var size =  $("input:radio[name=size]:checked").val();
         var type =  $("input:radio[name=type]:checked").val();
         for (var i = 0; i < numOfToppingsAvailable; i++) {
@@ -71,9 +71,50 @@ $(document).ready(function(){
             }
         }
         // Add Pizza To Order
-        var pizza = new PizzaMaker(size, type, selectedToppings, 'plain');
+        var pizza = new PizzaMaker(size, type, selectedToppings);
         addPizza(pizza);
-        console.log(pizzasOrdered);
         $('#another-pizza').show();
+        $('.checkout-button').show();
+
+    });
+    // Specialty Pizzas
+    $('.specialty-pizza').submit(function(event){
+        event.preventDefault();
+        var clicked = event.target.id;
+        if(clicked === 'miss-marple'){
+            var selectedToppings = ['Anchovies', 'Pickles', 'Smoked Oysters','Pneapple', 'Broccoli'];
+        }else if(clicked === 'bbq-chick'){
+            var selectedToppings = ['Bacon', 'Onion', 'Chicken'];
+        }else if(clicked === 'blt'){
+            var selectedToppings = ['Bacon', 'Lettuce', 'Tomatoe'];
+        }else if(clicked === 'meat-lovers'){
+            var selectedToppings = ['Pepperoni', 'Bacon', 'Ground Beef', 'Italian Sausage', 'Prosciutto', 'Spicy Salami'];
+        }else if(clicked === 'hawaiian'){
+            var selectedToppings = ['Bacon', 'Pineapple', 'Ham'];
+        }else{
+            var selectedToppings = ['Artichoke', 'Spinach', 'Tomatoe', 'Garlic Cloves', 'Wild Mushrooms'];
+        }
+        var size =  $("input:radio[name=size]:checked").val();
+        var type =  $("input:radio[name=type]:checked").val();
+        var pizza = new PizzaMaker(size, type, selectedToppings)
+        addPizza(pizza);
+        $('#another-pizza').show();
+        $('.checkout-button').show();
+
+        var total = totalCostCalculator();
+        // $('#create-order').hide();
+        // $('#checkout').show();
+        console.log(total);
+        // // console.log(pizzasOrdered);
+    });
+
+
+
+    // Calculate Total
+    $('.btn-success').click(function(){
+        var total = totalCostCalculator();
+        // $('#create-order').hide();
+        // $('#checkout').show();
+        console.log(total);
     });
 });
