@@ -11,158 +11,154 @@
 <body>
     <h1>Miss Marple<sup><small>&#127829;</small></sup>s Pizza Parlor</h1>
     <h6 class="banner">Made with the only the finest ingredients!<small class="banner">(our beer is good too!!!)</small><h6>
-    <div class="container" id="create-order">
-        <h2>Build your own pizza</h2>
-
-        <div class="jumbotron">
-            <form id="custom-pizza">
-
-                <div class="row">
-                    <div class="col-xs-6">
-                        <h3>Choose a size</h3>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$10</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$15</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$20</small><br>
+        <div class="container" id="create-order">
+            <h2>Build your own pizza</h2>
+            <div class="jumbotron">
+                <form id="custom-pizza">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3>Choose a size</h3>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$10</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$15</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$20</small><br>
+                        </div>
+                        <div class="col-xs-6">
+                            <h3>Choose a style</h3>
+                            <input class="type" type="radio" name="type" value="Thin Crust" required> Thin crust<br>
+                            <input class="type" type="radio" name="type" value="Hand Tossed" required> Hand Tossed<br>
+                            <input class="type" type="radio" name="type" value="Deep-Dish" required> Square deep-dish<br>
+                        </div>
                     </div>
-                    <div class="col-xs-6">
-                        <h3>Choose a style</h3>
-                        <input class="type" type="radio" name="type" value="Thin Crust" required> Thin crust<br>
-                        <input class="type" type="radio" name="type" value="Hand Tossed" required> Hand Tossed<br>
-                        <input class="type" type="radio" name="type" value="Deep-Dish" required> Square deep-dish<br>
-
+                    <h3>Select your toppings<small>-50 cents each</small><sup><small>(<span class="hot">&#127798;</span>=hot)</small></sup></h3>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Extra Cheese" id="0">Extra Cheese<br>
+                            <input type="checkbox" name="topping" value="Pepperoni" id="1">Pepperoni<br>
+                            <input type="checkbox" name="topping" value="Prosciutto" id="2">Prosciutto<br>
+                            <input type="checkbox" name="topping" value="Artichoke" id="3">Artichoke<br>
+                            <input type="checkbox" name="topping" value="Sun-Dried Tomatoe" id="4">Sun-dried tomatoes<br>
+                            <input type="checkbox" name="topping" value="Banana Peppers" id="5">Bannana peppers<br>
+                            <input type="checkbox" name="topping" value="Spicy Salami" id="6">Spicy Salami<span class="hot">&#127798;</span><br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Lettuce" id="7">Lettuce<br>
+                            <input type="checkbox" name="topping" value="Black Olives" id="8">Black olives<br>
+                            <input type="checkbox" name="topping" value="Spinach" id="9">Spinach<br>
+                            <input type="checkbox" name="topping" value="Tomato" id="10">Tomatoe<br>
+                            <input type="checkbox" name="topping" value="Jalapeno<span class='hot'>&#127798;</span>" id="11">Jalapeno<span class="hot">&#127798;</span><br>
+                            <input type="checkbox" name="topping" value="Garlic" id="12">Garlic<br>
+                            <input type="checkbox" name="topping" value="Sausage" id="13">Sausage<br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Mushrooms" id="14">Mushrooms<br>
+                            <input type="checkbox" name="topping" value="Anchovies" id="15">Anchovies<br>
+                            <input type="checkbox" name="topping" value="Onions" id="16">Onions<br>
+                            <input type="checkbox" name="topping" value="Pineapple" id="17">Pineapple<br>
+                            <input type="checkbox" name="topping" value="Green Olives" id="18">Green olives<br>
+                            <input type="checkbox" name="topping" value="Bacon" id="19">Bacon<br>
+                            <input type="checkbox" name="topping" value="Ground Beef" id="20">Ground beef<br>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="checkbox" name="topping" value="Green Bell Peppers" id="21">Green bell peppers<br>
+                            <input type="checkbox" name="topping" value="Chicken" id="22">Chicken<br>
+                            <input type="checkbox" name="topping" value="Broccoli" id="23">Broccoli<br>
+                            <input type="checkbox" name="topping" value="Ham" id="24">Ham<br>
+                            <input type="checkbox" name="topping" value="Wild Mushrooms" id="25">Wild Mushrooms<br>
+                            <input type="checkbox" name="topping" value="Smoked Oyster" id="26">Smoked-Oysters<br>
+                            <input type="checkbox" name="topping" value="Pickles" id="27">Pickles<br>
+                        </div>
+                    </div>
+                    <br><button type="submit" class="button btn-danger btn-lg" id="add-pizza">Add <span id="another-pizza">Another </span>Pizza</button>
+                    <div class="checkout-button">
+                        <br><button class="btn-success" type="button" name="button">Go To Checkout</button>
+                    </div>
+                </form>
+            </div>
+            <h2>Specialty Pizzas</h2>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="miss-marple">
+                            <h5>Miss Marple's Favorite</h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$12.50</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$18.75</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$25</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
                     </div>
                 </div>
-                <h3>Select your toppings<small>-50 cents each</small><sup><small>(<span class="hot">&#127798;</span>=hot)</small></sup></h3>
-                <div class="row">
-                    <div class="col-xs-3">
-                        <input type="checkbox" name="topping" value="Extra Cheese" id="0">Extra Cheese<br>
-                        <input type="checkbox" name="topping" value="Pepperoni" id="1">Pepperoni<br>
-                        <input type="checkbox" name="topping" value="Prosciutto" id="2">Prosciutto<br>
-                        <input type="checkbox" name="topping" value="Artichoke" id="3">Artichoke<br>
-                        <input type="checkbox" name="topping" value="Sun-Dried Tomatoe" id="4">Sun-dried tomatoes<br>
-                        <input type="checkbox" name="topping" value="Bannana Peppers" id="5">Bannana peppers<br>
-                        <input type="checkbox" name="topping" value="Salami" id="6">Spicy Salami<span class="hot">&#127798;</span><br>
-                    </div>
-                    <div class="col-xs-3">
-                        <input type="checkbox" name="topping" value="Lettuce" id="7">Lettuce<br>
-                        <input type="checkbox" name="topping" value="Black Olives" id="8">Black olives<br>
-                        <input type="checkbox" name="topping" value="Spinach" id="9">Spinach<br>
-                        <input type="checkbox" name="topping" value="Tomatoe" id="10">Tomatoe<br>
-                        <input type="checkbox" name="topping" value="Jalapeno<span class='hot'>&#127798;</span>" id="11">Jalapeno<span class="hot">&#127798;</span><br>
-                        <input type="checkbox" name="topping" value="Garlic" id="12">Garlic<br>
-                        <input type="checkbox" name="topping" value="Sausage" id="13">Sausage<br>
-                    </div>
-                    <div class="col-xs-3">
-                        <input type="checkbox" name="topping" value="Mushrooms" id="14">Mushrooms<br>
-                        <input type="checkbox" name="topping" value="Anchovies" id="15">Anchovies<br>
-                        <input type="checkbox" name="topping" value="Onions" id="16">Onions<br>
-                        <input type="checkbox" name="topping" value="Pineapple" id="17">Pineapple<br>
-                        <input type="checkbox" name="topping" value="Green Olives" id="18">Green olives<br>
-                        <input type="checkbox" name="topping" value="Bacon" id="19">Bacon<br>
-                        <input type="checkbox" name="topping" value="Ground Beef" id="20">Ground beef<br>
-                    </div>
-                    <div class="col-xs-3">
-                        <input type="checkbox" name="topping" value="Green Bell Peppers" id="21">Green bell peppers<br>
-                        <input type="checkbox" name="topping" value="Chicken" id="22">Chicken<br>
-                        <input type="checkbox" name="topping" value="Broccoli" id="23">Broccoli<br>
-                        <input type="checkbox" name="topping" value="Ham" id="24">Ham<br>
-                        <input type="checkbox" name="topping" value="Wild Mushrooms" id="25">Wild Mushrooms<br>
-                        <input type="checkbox" name="topping" value="Smoked Oyster" id="26">Smoked-Oysters<br>
-                        <input type="checkbox" name="topping" value="Pickles" id="27">Pickles<br>
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="bbq-chick">
+                            <h5>BBQ Chicken</h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
                     </div>
                 </div>
-                <br><button type="submit" class="button btn-danger btn-lg" id="add-pizza">Add <span id="another-pizza">Another </span>Pizza</button>
-                <div class="checkout-button">
-                    <br><button class="btn-success" type="button" name="button">Go To Checkout</button>
-                </div>
-            </form>
-        </div>
-
-        <h2>Specialty Pizzas</h2>
-        <div class="row">
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="miss-marple">
-                        <h5>Miss Marple's Favorite</h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$12.50</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$18.75</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$25</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="blt">
+                            <h5>BLT</h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="bbq-chick">
-                        <h5>BBQ Chicken</h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="hawaiian">
+                            <h5>Hawaiian</h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="meat-lovers">
+                            <h5>Meat Lovers<span class="hot">&#127798;</span></h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$13</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$19.50</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$26</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="jumbotron">
+                        <form class="specialty-pizza" id="veggie">
+                            <h5>Veggi-Deluxe</h5>
+                            <input class="size" type="radio" name="size" value="Small" required> Small<small>-$12.50</small><br>
+                            <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$18.75</small><br>
+                            <input class="size" type="radio" name="size" value="Large" required> Large<small>-$25</small><br>
+                            <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="blt">
-                        <h5>BLT</h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="hawaiian">
-                        <h5>Hawaiian</h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$11.50</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$17.25</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$23</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="meat-lovers">
-                        <h5>Meat Lovers<span class="hot">&#127798;</span></h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$13</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$19.50</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$26</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
-                </div>
-            </div>
-            <div class="col-xs-4">
-                <div class="jumbotron">
-                    <form class="specialty-pizza" id="veggie">
-                        <h5>Veggi-Deluxe</h5>
-                        <input class="size" type="radio" name="size" value="Small" required> Small<small>-$12.50</small><br>
-                        <input class="size" type="radio" name="size" value="Medium" required> Medium<small>-$18.75</small><br>
-                        <input class="size" type="radio" name="size" value="Large" required> Large<small>-$25</small><br>
-                        <button class="button btn-danger btn-xs" type="submit" name="button">Add</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="checkout-button">
-            <br><button class="btn-success" type="button" name="button">Go To Checkout</button>
-        </div>
-    </div>
-    <div class="container" id="complete-order">
-        <h2>&#127829;Your Order&#127829;</h2>
-        <div class="jumbotron">
-            <div id="order-detail">
+            <div class="checkout-button">
+                <br><button class="btn-success" type="button" name="button">Go To Checkout</button>
             </div>
         </div>
-        <div class="jumbotron">
-            <div id="order-total">
-            </div>
+        <div class="container" id="checkout">
+                <h2>&#127829;Your Order&#127829;</h2>
+                    <div class="jumbotron">
+                        <div id="order-detail">
+                        </div>
+                    </div>
+                    <div class="jumbotron">
+                        <div id="order-total">
+                        </div>
+                    </div>
         </div>
-    </div>
-</body>
-</html>
+    </body>
+    </html>

@@ -13,9 +13,9 @@ PizzaMaker.prototype.toppingsCharge = function(j){
     for (var i = 0; i < pizzasOrdered[j].toppings.length; i++) {
         toppingsCharge += 0.5;
     }
-    if(pizzasOrdered[j].pSize === 'md'){
+    if(pizzasOrdered[j].pSize === 'Medium'){
         toppingsCharge *= 1.5;
-    }else if (pizzasOrdered[j].pSize === 'lg') {
+    }else if (pizzasOrdered[j].pSize === 'Large') {
         toppingsCharge *= 2;
     }
     return toppingsCharge;
@@ -23,13 +23,11 @@ PizzaMaker.prototype.toppingsCharge = function(j){
 function addToppings(n){
     for (var i = 0; i < selectedToppings.length; i++) {
         // pizzasOrdered[n].toppings.push(selectedToppings[i]);
-
     }
 }
 function addPizza(pizza){
     pizzasOrdered.push(pizza);
 }
-
 // Total Cost Calculator
 function totalCostCalculator(){
     var charges = 0;
@@ -40,6 +38,36 @@ function totalCostCalculator(){
         charges += pizzasOrdered[i].toppingsCharge(i);
     }
     return charges;
+}
+var pizzaType;
+var style;
+var selectedToppings;
+function specialtyPizza(clicked){
+    if(clicked === 'miss-marple'){
+        style = 'Deep-Dish';
+        pizzaType = 'Miss Marple\'s Favorite';
+        selectedToppings = ['Anchovies', 'Pickles', 'Smoked Oysters','Pneapple', 'Broccoli'];
+    }else if(clicked === 'bbq-chick'){
+        style = 'Hand Tossed';
+        pizzaType = 'BBQ Chicken Pizza';
+        selectedToppings = ['Bacon', 'Onion', 'Chicken'];
+    }else if(clicked === 'blt'){
+        style = 'Hand Tossed Round';
+        pizzaType = 'BLT Pizza';
+        selectedToppings = ['Bacon', 'Lettuce', 'Tomatoe'];
+    }else if(clicked === 'meat-lovers'){
+        style = 'Deep-Dish';
+        pizzaType = 'Meat Lovers';
+        selectedToppings = ['Pepperoni', 'Bacon', 'Ground Beef', 'Italian Sausage', 'Prosciutto', 'Spicy Salami<span class="hot">&#127798;</span>'];
+    }else if(clicked === 'hawaiian'){
+        style = 'Thin Crust';
+        pizzaType = 'Hawaiian';
+        selectedToppings = ['Bacon', 'Pineapple', 'Ham'];
+    }else{
+        style = 'Thin Crust';
+        pizzaType = 'Veggi-Deluxe';
+        selectedToppings = ['Artichoke', 'Spinach', 'Tomato', 'Garlic Cloves', 'Wild Mushrooms'];
+    }
 }
 // User Logic
 $(document).ready(function(){
@@ -59,49 +87,26 @@ $(document).ready(function(){
         // Add Pizza To Order
         var pizza = new PizzaMaker(pizzaType, size, style, selectedToppings);
         addPizza(pizza);
+        $("form#custom-pizza").trigger("reset");
         $('#another-pizza').show();
         $('.checkout-button').show();
-
     });
     // Specialty Pizzas
     $('.specialty-pizza').submit(function(event){
         event.preventDefault();
         var clicked = event.target.id;
-        if(clicked === 'miss-marple'){
-            var style = 'Deep-Dish';
-            var pizzaType = 'Miss Marple\'s Favorite';
-            var selectedToppings = ['Anchovies', 'Pickles', 'Smoked Oysters','Pneapple', 'Broccoli'];
-        }else if(clicked === 'bbq-chick'){
-            var style = 'Hand Tossed';
-            var pizzaType = 'Miss Marple\'s Favorite';
-            var selectedToppings = ['Bacon', 'Onion', 'Chicken'];
-        }else if(clicked === 'blt'){
-            var style = 'Hand Tossed Round';
-            var pizzaType = 'BBQ Chicken';
-            var selectedToppings = ['Bacon', 'Lettuce', 'Tomatoe'];
-        }else if(clicked === 'meat-lovers'){
-            var style = 'Deep-Dish';
-            var pizzaType = 'Meat Lovers';
-            var selectedToppings = ['Pepperoni', 'Bacon', 'Ground Beef', 'Italian Sausage', 'Prosciutto', 'Spicy Salami<span class="hot">&#127798;</span>'];
-        }else if(clicked === 'hawaiian'){
-            var style = 'Thin Crust';
-            var pizzaType = 'Hawaiian';
-            var selectedToppings = ['Bacon', 'Pineapple', 'Ham'];
-        }else{
-            var style = 'Thin Crust';
-            var pizzaType = 'Veggi-Deluxe';
-            var selectedToppings = ['Artichoke', 'Spinach', 'Tomatoe', 'Garlic Cloves', 'Wild Mushrooms'];
-        }
+        specialtyPizza(clicked);
         var size =  $("input:radio[name=size]:checked").val();
         var pizza = new PizzaMaker(pizzaType, size, style, selectedToppings)
         addPizza(pizza);
+        $("form.specialty-pizza").trigger("reset");
         $('#another-pizza').show();
         $('.checkout-button').show();
-        console.log(pizzasOrdered);
+        total = totalCostCalculator();
     });
-
     // Calculate Total
-    $('.btn-success').click(function(){
+    $('.btn-success').click(function(event){
+        event.preventDefault();
         var total = totalCostCalculator();
         $('#create-order').hide();
         $('#checkout').show();
@@ -113,6 +118,5 @@ $(document).ready(function(){
             };
         };
         $('#order-total').append('<h4>Your total comes to $' + total + '</h4>');
-
     });
 });

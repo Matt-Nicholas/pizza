@@ -56,3 +56,9 @@ small{
 .hot{
     color: red;
 }
+#complete-order{
+    display: none;
+}
+#delivery-chosen{
+    display: none;
+}
