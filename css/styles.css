@@ -11,9 +11,11 @@ body{
 #another-pizza{
     display: none;
 }
+
 #checkout{
     display: none;
 }
+
 .checkout-button{
     display: none;
 }
@@ -32,16 +34,19 @@ h3{
     margin-top: 5px;
 
 }
+
 h5{
     margin-top: 5px;
 
 }
+
 .banner{
     text-align: left;
     background-color: red;
     color: white;
     padding-top: 30px
 }
+
 .jumbotron{
     padding-top: 5px;
     padding-bottom: 5px;
@@ -53,12 +58,11 @@ small{
     font-size: smaller;
     font-style: italic;
 }
+
 .hot{
     color: red;
 }
+
 #complete-order{
-    display: none;
-}
-#delivery-chosen{
     display: none;
 }
