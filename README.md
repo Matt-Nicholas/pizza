@@ -14,8 +14,8 @@ Allows users to choose a custom pizza or a prebuilt specialty pizza and calculat
 * visit https://matt-nicholas.github.io/pizza
 
 ## BDD
--Can create a pizza
--Can add toppings to pizza
+-Can create a pizza object
+-Can add toppings to pizza object
 -Can count pizzas
 -Can count toppings on each pizza created
 -Can calculate total depending on how many pizza and how many toppings per pizza
